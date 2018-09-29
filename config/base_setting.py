@@ -20,3 +20,8 @@ API_IGNORE_URLS = [
 
 PAGE_SIZE = 5
 PAGE_DISPLAY = 10
+
+STATUS_MAPPING={
+    '1':'正常',
+    '0':'已删除'
+}
