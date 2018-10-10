@@ -14,4 +14,6 @@ export ops_config=production && python manager.py runserver
 username = magic
 password = 123456
 
-
+小程序测试号信息
+AppID wxa930885d6225a0e4
+AppSecret efb98969bff7e906812f639430496fb6
