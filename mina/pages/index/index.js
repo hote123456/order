@@ -48,7 +48,7 @@ Page({
       var data = e.detail.userInfo;
       //发送请求
       wx.request({
-          url:'http://192.168.124.130:5000/api/xxx',
+          url:'http://192.168.124.130:5000/api/member/login',
           header:app.getRequestHeader(),
           method:'POST',
           data:data,

@@ -6,7 +6,8 @@ SQLALCHEMY_ECHO = False
 AUTH_COOKIE_NAME = 'mooc_food'
 
 IGNORE_URLS = [
-    "^/user/login"
+    "^/user/login",
+    "^/api"
 ]
 
 IGNORE_CHECK_LOGIN_URLS = [
