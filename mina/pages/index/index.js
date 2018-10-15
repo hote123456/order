@@ -42,19 +42,29 @@ Page({
   login:function ( e ) {
       // app.console(e);测试e接收什么信息
       if(!e.detail.userInfo) {
-        app.alert({'content':'登录失败，请再次点击'})
+        app.alert({'content':'登录失败，请再次点击'});
+        return;
       }
 
       var data = e.detail.userInfo;
       //发送请求
-      wx.request({
-          url:'http://192.168.124.130:5000/api/member/login',
-          header:app.getRequestHeader(),
-          method:'POST',
-          data:data,
+      wx.login({
           success:function (res) {
+              if(!res.code){
+                  app.alert({'content':'登录失败，请再次点击'});
+                  return;
+              }
+              data['code'] = res.code;
+              wx.request({
+                  url:'http://192.168.124.130:5000/api/member/login',
+                  header:app.getRequestHeader(),
+                  method:'POST',
+                  data:data,
+                  success:function (res) {
 
+                  }
+              })
           }
-      })
+      });
   }
 });
