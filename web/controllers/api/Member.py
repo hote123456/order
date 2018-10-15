@@ -19,6 +19,9 @@ def login():
         app.config['MINA_APP']['appid'], app.config['MINA_APP']['appkey'],code)
     app.logger.info(url)
     r = requests.get(url)
-    res = r.text
-    app.logger.info(res)
+    res = json.load(r.text)
+    app.logger.info(url)
+    openid = res['openid']
+
+
     return jsonify(resp)
