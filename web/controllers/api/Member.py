@@ -1,7 +1,7 @@
 from web.controllers.api import route_api
 from flask import request, jsonify
 from application import app, db
-import requests
+import requests,json
 
 
 @route_api.route('/member/login', methods=['POST', 'GET'])

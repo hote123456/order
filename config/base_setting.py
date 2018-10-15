@@ -27,7 +27,7 @@ STATUS_MAPPING={
     '0':'已删除'
 }
 
-MIYA_APP ={
+MINA_APP ={
     'appid':'wxa930885d6225a0e4',
     'appkey':'efb98969bff7e906812f639430496fb6'
 }
