@@ -15,8 +15,8 @@ def login():
         resp['msg'] = '需要code'
         return jsonify(resp)
 
-    url = 'https://api.weixin.qq.com/sns/jscode2session?appid={0}&secret={1}&js_code=JSCODE&grant_type=authorization_code'.format(
-        app.config['MINA_APP']['appid'], app.config['MINA_APP']['appkey'])
+    url = 'https://api.weixin.qq.com/sns/jscode2session?appid={0}&secret={1}&js_code={2}&grant_type=authorization_code'.format(
+        app.config['MINA_APP']['appid'], app.config['MINA_APP']['appkey'],code)
     app.logger.info(url)
     r = requests.get(url)
     res = r.text
