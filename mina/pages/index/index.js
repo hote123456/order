@@ -66,7 +66,7 @@ Page({
                             return;
                         }
                         app.setCache('token',res.data.data.token);
-                        that.goToIndex();
+                        // that.goToIndex();
                     }
                 })
             }
