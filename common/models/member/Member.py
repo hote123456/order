@@ -1,7 +1,7 @@
 # coding: utf-8
 from sqlalchemy import BigInteger, Column, DateTime, Integer, String
 from sqlalchemy.schema import FetchedValue
-from application import db
+from application import db, app
 
 
 class Member(db.Model):
@@ -17,3 +17,16 @@ class Member(db.Model):
     status = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue())
     updated_time = db.Column(db.DateTime, nullable=False, server_default=db.FetchedValue())
     created_time = db.Column(db.DateTime, nullable=False)
+
+    @property
+    def status_desc(self):
+        return app.config['STATUS_MAPPING'][str(self.status)]
+
+    @property
+    def sex_desc(self):
+        sex_mapping = {
+            '0': '未知',
+            '1': '男',
+            '2': '女'
+        }
+        return sex_mapping[str(self.sex)]
