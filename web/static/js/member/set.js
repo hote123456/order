@@ -44,6 +44,6 @@ var member_set_ops ={
         });
     }
 };
-$(document).read(function () {
+$(document).ready(function () {
     member_set_ops.init();
 });
