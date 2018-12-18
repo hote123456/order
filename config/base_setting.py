@@ -22,12 +22,18 @@ API_IGNORE_URLS = [
 PAGE_SIZE = 5
 PAGE_DISPLAY = 10
 
-STATUS_MAPPING={
-    '1':'正常',
-    '0':'已删除'
+STATUS_MAPPING = {
+    '1': '正常',
+    '0': '已删除'
 }
 
-MINA_APP ={
-    'appid':'wxa930885d6225a0e4',
-    'appkey':'efb98969bff7e906812f639430496fb6'
+MINA_APP = {
+    'appid': 'wxa930885d6225a0e4',
+    'appkey': 'efb98969bff7e906812f639430496fb6'
+}
+
+UPLOAD = {
+    'ext': ['jpg', 'gif', 'bmp', 'jpeg', 'png'],
+    'prefix_path': '/web/static/upload',
+    'prefix_url': '/status/upload'
 }

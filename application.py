@@ -20,7 +20,7 @@ db = SQLAlchemy()
 app = Application(__name__, template_folder=os.getcwd() + '/web/templates/', root_path=os.getcwd())
 manager = Manager(app)
 
-"hanshumoban"
+"函数模板"
 from common.libs.UrlManager import UrlManager
 
 app.add_template_global(UrlManager.buildStaticUrl, 'buildStaticUrl')

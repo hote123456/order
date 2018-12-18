@@ -1,7 +1,7 @@
 # coding: utf-8
 from sqlalchemy import BigInteger, Column, DateTime, Integer, String
 from sqlalchemy.schema import FetchedValue
-from application import db
+from application import db,app
 
 
 class Food(db.Model):
@@ -22,3 +22,7 @@ class Food(db.Model):
     comment_count = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue())
     updated_time = db.Column(db.DateTime, nullable=False, server_default=db.FetchedValue())
     created_time = db.Column(db.DateTime, nullable=False)
+
+    @property
+    def status_desc(self):
+        return app.config['STATUS_MAPPING'][str(self.status)]
